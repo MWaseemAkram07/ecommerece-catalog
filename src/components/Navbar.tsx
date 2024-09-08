@@ -2,7 +2,7 @@ import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { useAppSelector } from "../redux/hooks";
 
-const Navbar = () => {
+const Navbar = ({ setShowCart }: any) => {
     const cartCount = useAppSelector((state) => state.cartReducer.length);
     return (
         <div className="pt-4 bg-white top-0 sticky">
@@ -29,7 +29,7 @@ const Navbar = () => {
                                 <p className="font-medium">Your Account</p>
                             </div>
                         </div>
-                        <div className="text-gray-500 text-[32px] relative">
+                        <div className="text-gray-500 text-[32px] relative" onClick={() => setShowCart(true)}>
                             <AiOutlineShoppingCart />
                             <div className="absolute top-[-15px] right-[-10px] bg-red-600 w-[25px] h-[25px] rounded-full text-white text-[14px] grid place-items-center">
                                 {cartCount}
