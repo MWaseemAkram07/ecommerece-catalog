@@ -1,8 +1,15 @@
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      text to check is tailwind enabled
-
-    </h1>
+   <div>
+     <Provider store={store}>
+        <Navbar />
+        <Hero />
+     </Provider>
+   </div>
   )
 }
